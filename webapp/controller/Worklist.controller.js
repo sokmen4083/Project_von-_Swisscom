@@ -155,7 +155,7 @@ sap.ui.define([
          * @private
          */
         _showObject : function (oItem) {
-            var sPath = oItem.getBindingContext("EmployeeJsonModel").getPath().split("/")[2];
+            var sPath = oItem.getBindingContext("ProjectJsonModel").getPath().split("/")[2];
             this.getRouter().navTo("object", {
                 //objectId: oItem.getBindingContext().getPath().substring("/ZPLAPRJBER_CDS".length)
                 objectId: sPath
