@@ -76,6 +76,14 @@
       "ProjectJsonModel": {
         "type": "sap.ui.model.json.JSONModel"
       }
+
+      
+      ,
+      "KundeJsonModel": {
+        "type": "sap.ui.model.json.JSONModel"
+      }
+
+
     },
     "resources": {
       "css": []

@@ -21,9 +21,9 @@
                 id="table"
                 width="auto"
                 items="{
-                    path: 'EmployeeJsonModel>/results',
+                    path: 'KundeJsonModel>/results',
                     sorter: {
-                        path: 'EmployeeJsonModel>VORNMAME',
+                        path: 'KundeJsonModel>NAME1_GP',
                         desending: false
                     }
                     
@@ -38,7 +38,7 @@
                     <OverflowToolbar>
                         <Title
                             id="tableHeader"
-                            text="{worklistView>/worklistTableTitle}"
+                            text="{i18n>worklistTableTitle}"
                             level="H3"/>
                         <ToolbarSpacer />
                         <SearchField
@@ -56,14 +56,14 @@
 
                 <columns>
                     
-                    <Column id="projectColumn" hAlign="Middle">
-                        <Text text="Project" id="unitNumberColumnTitle2"/>
+                    <Column id="KundeColumn1" hAlign="Middle">
+                        <Text text="Kunde" id="unitNumberColumnTitle2"/>
                     </Column>
-                    <Column id="employeeColumn" hAlign="Middle">
-                        <Text text="Mitarbeiter" id="unitNumberColumnTitle1"/>
+                    <Column id="KundeColumn2" hAlign="Middle">
+                        <Text text="Kunde ID" id="unitNumberColumnTitle1"/>
                     </Column>
-                    <Column id="kundeColumn" hAlign="Middle">
-                        <Text text="Kunde" id="unitNumberColumnTitle"/>
+                    <Column id="kundeColumn3" hAlign="Middle">
+                        <Text text="Business Berich" id="unitNumberColumnTitle"/>
                     </Column>
                 </columns>
 
@@ -73,9 +73,9 @@
                         press=".onPress"
                         >
                         <cells>
-                        <ActionListItem />
-		                <ActionListItem  text="{EmployeeJsonModel>VORNMAME} {EmployeeJsonModel>NACHNAME}"/>
-		                <ActionListItem  />
+                        <ActionListItem text="{KundeJsonModel>NAME1_GP}" />
+		                <ActionListItem  text="{KundeJsonModel>KUNDE_ID}"/>
+		                <ActionListItem text="{KundeJsonModel>BUSINESS_UNIT}" />
                         </cells>
                     </ColumnListItem>
                 </items>

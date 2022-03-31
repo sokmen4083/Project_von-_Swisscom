@@ -64,7 +64,7 @@ sap.ui.define([
             var sObjectId =  oEvent.getParameter("arguments").objectId;
             console.log(sObjectId);
             //this._bindView("/ZPLAPRJBER_CDS" + sObjectId);
-            this._bindView("EmployeeJsonModel>/results/" + sObjectId);
+            this._bindView("KundeJsonModel>/results/" + sObjectId);
         },
 
         /**
@@ -102,7 +102,7 @@ sap.ui.define([
             }*/
 
             var oResourceBundle = this.getResourceBundle(),
-                oObject = oView.getBindingContext("EmployeeJsonModel").getObject(),
+                oObject = oView.getBindingContext("KundeJsonModel").getObject(),
                 sObjectId = oObject.NACHNAME
                 //sObjectName = oObject.ZPLAPRJBER_CDS;
 
