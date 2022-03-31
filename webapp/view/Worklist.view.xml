@@ -21,11 +21,12 @@
                 id="table"
                 width="auto"
                 items="{
-                    path: 'ProjPlanJsonModel>/results',
+                    path: 'EmployeeJsonModel>/results',
                     sorter: {
-                        path: 'PlanningJsonModel>Arbeitort',
-                        descending: false
+                        path: 'EmployeeJsonModel>NACHNAME',
+                        desending: false
                     }
+                    
                 }"
                 noDataText="{worklistView>/tableNoDataText}"
                 busyIndicatorDelay="{worklistView>/tableBusyDelay}"
@@ -69,11 +70,12 @@
                 <items>
                     <ColumnListItem
                         type="Navigation"
-                        press=".onPress">
+                        press=".onPress"
+                        >
                         <cells>
-                        <ActionListItem id="projectList" />
-		                <ActionListItem id="employeeList" />
-		                <ActionListItem id="kundeList" />
+                        <ActionListItem />
+		                <ActionListItem  text="{EmployeeJsonModel>NACHNAME} {EmployeeJsonModel>VORNMAME} "/>
+		                <ActionListItem  />
                         </cells>
                     </ColumnListItem>
                 </items>

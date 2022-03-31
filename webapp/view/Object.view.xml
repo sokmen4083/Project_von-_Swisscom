@@ -13,17 +13,17 @@
 
         <semantic:titleHeading>
             <Title
-                text="{ProjPlanJsonModel>Arbeitort}"
+                text="{EmployeeJsonModel>NACHNAME}"
                 level="H2"/>
         </semantic:titleHeading>
 
         <semantic:headerContent>
-            <ObjectNumber
+            <!--<ObjectNumber
                 number="{
-                    path: 'ProjPlanJsonModel>PensumWoche',
+                    path: 'EmployeeJsonModel>NACHNAME',
                     formatter: '.formatter.numberUnit'
                 }"
-                unit="{ProjPlanJsonModel>Arbeitort}" />
+                unit="{EmployeeJsonModel>NACHNAME}" />-->
         </semantic:headerContent>
 
         <semantic:sendEmailAction>
