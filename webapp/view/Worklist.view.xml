@@ -21,9 +21,9 @@
                 id="table"
                 width="auto"
                 items="{
-                    path: 'EmployeeJsonModel>/results',
+                    path: 'ProjectJsonModel>/results',
                     sorter: {
-                        path: 'EmployeeJsonModel>NACHNAME',
+                        path: 'ProjectJsonModel>PRJNA',
                         desending: false
                     }
                     
@@ -73,8 +73,8 @@
                         press=".onPress"
                         >
                         <cells>
-                        <ActionListItem />
-		                <ActionListItem  text="{EmployeeJsonModel>NACHNAME} {EmployeeJsonModel>VORNMAME} "/>
+                        <ActionListItem text="{ProjectJsonModel>PRJNA} "/>
+		                <ActionListItem  />
 		                <ActionListItem  />
                         </cells>
                     </ColumnListItem>
