@@ -23,7 +23,7 @@ sap.ui.define([
             // detail page shows busy indication immediately so there is no break in
             // between the busy indication for loading the view's meta data
             var oViewModel = new JSONModel({
-                    busy : true,
+                    busy : false,
                     delay : 0
                 });
             this.getRouter().getRoute("object").attachPatternMatched(this._onObjectMatched, this);
@@ -64,7 +64,7 @@ sap.ui.define([
             var sObjectId =  oEvent.getParameter("arguments").objectId;
             console.log(sObjectId);
             //this._bindView("/ZPLAPRJBER_CDS" + sObjectId);
-            this._bindView("ProjPlanJsonModel>/results/" + sObjectId);
+            this._bindView("EmployeeJsonModel>/results/" + sObjectId);
         },
 
         /**
@@ -102,11 +102,11 @@ sap.ui.define([
             }*/
 
             var oResourceBundle = this.getResourceBundle(),
-                oObject = oView.getBindingContext("ProjPlanJsonModel").getObject(),
-                sObjectId = oObject.Arbeitort,
-                sObjectName = oObject.ZPLAPRJBER_CDS;
+                oObject = oView.getBindingContext("EmployeeJsonModel").getObject(),
+                sObjectId = oObject.NACHNAME
+                //sObjectName = oObject.ZPLAPRJBER_CDS;
 
-                oViewModel.setProperty("/busy", false);
+                //oViewModel.setProperty("/busy", false);
                 /*oViewModel.setProperty("/shareSendEmailSubject",
                     oResourceBundle.getText("shareSendEmailObjectSubject", [sObjectId]));
                 oViewModel.setProperty("/shareSendEmailMessage",

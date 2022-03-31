@@ -25,7 +25,6 @@ sap.ui.define([
             var oViewModel;
 
             this.oListProject = this.getView().byId("projectList");
-            this.oListEmployee = this.getView().byId("employeeList");
             this.oListKunde = this.getView().byId("kundeList");
             //this.oTable = this.getView().byId("table");
 
@@ -45,16 +44,7 @@ sap.ui.define([
             });
             this.setModel(oViewModel, "worklistView");
    
-           var oModelEmployee = this.getOwnerComponent().getModel("EmployeeJsonModel");
-           this.oListProject.setModel(oModelEmployee, "oEmployeeModel");
-			var oSelectTemplate = new sap.ui.core.ListItem({
-                key: "{EmployeeJsonModel>EMPLOYEE_ID}",
-				text: "{EmployeeJsonModel>VORNMAME}"
-			});
-			this.oListProject.bindItems({
-				path: "EmployeeJsonModel>/results",
-				template: oSelectTemplate
-			});
+           
 
            /*var oModelProject = this.getOwnerComponent().getModel("ProjectJsonModel");
            //this.oSelectProject.setModel(oModelProject, "oProjectModel");
@@ -165,7 +155,7 @@ sap.ui.define([
          * @private
          */
         _showObject : function (oItem) {
-            var sPath = oItem.getBindingContext("ProjPlanJsonModel").getPath().split("/")[2];
+            var sPath = oItem.getBindingContext("EmployeeJsonModel").getPath().split("/")[2];
             this.getRouter().navTo("object", {
                 //objectId: oItem.getBindingContext().getPath().substring("/ZPLAPRJBER_CDS".length)
                 objectId: sPath
