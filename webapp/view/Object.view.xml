@@ -2,7 +2,10 @@
     controllerName="com.swisscom.socialbee.plan.resourceplan.controller.Object"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns:semantic="sap.f.semantic">
+    xmlns:semantic="sap.f.semantic"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
 
     <semantic:SemanticPage
         id="page"
@@ -11,21 +14,56 @@
         busy="{objectView>/busy}"
         busyIndicatorDelay="{objectView>/delay}">
 
-        <semantic:titleHeading>
-            <Title
-                text="{EmployeeJsonModel>NACHNAME}"
-                level="H2"/>
-        </semantic:titleHeading>
-
         <semantic:headerContent>
-            <!--<ObjectNumber
-                number="{
-                    path: 'EmployeeJsonModel>NACHNAME',
-                    formatter: '.formatter.numberUnit'
-                }"
-                unit="{EmployeeJsonModel>NACHNAME}" />-->
+		
         </semantic:headerContent>
-
+<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormChange354"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+			<Avatar displaySize="XL" />
+				<Label text="Vorname" />
+				<Input id="name" value="{EmployeeJsonModel>VORNMAME}" />
+				<Label text="Nachname" />
+				<Input value="{EmployeeJsonModel>NACHNAME}">
+				</Input>
+				<Label text="Persönliche Nummer" />
+                <Input value="{EmployeeJsonModel>PERSONALNR}">
+				</Input>
+                <Label text="Arbeitort" />
+                <Input value="{EmployeeJsonModel>ARBEITORT}">
+				</Input>
+                <Label text="Fachbereich" />
+                <Input value="{EmployeeJsonModel>FACHBEREICH}">
+				</Input>
+				<Label text="Mitarbeit Gruppe" />
+                <Input type="number" value="{EmployeeJsonModel>MITARBGRUPPE}">
+				</Input>
+                <Label text="Pensum Pro Woche" />
+                <Input value="{EmployeeJsonModel>PENSUM_WOCHE}">
+				</Input>
+                <Label text="EINTRITTSDATUM" />
+                <DatePicker displayFormat="short" dateValue="{EmployeeJsonModel>EINTRITTSDATUM}" />
+				<Label text="AUSTRITTSDATUM" />
+                <DatePicker displayFormat="short" dateValue="{EmployeeJsonModel>AUSTRITTSDATUM}" />
+				
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
         <semantic:sendEmailAction>
             <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
         </semantic:sendEmailAction>
