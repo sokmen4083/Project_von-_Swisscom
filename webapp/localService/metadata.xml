@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://s4shared.sap-cc.com:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://s4shared.sap-cc.com:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://s4shared.sap-cc.com:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://s4shared.sap-cc.com:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://s4shared.sap-cc.com:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://s4shared.sap-cc.com:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://s4shared.sap-cc.com:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://s4shared.sap-cc.com:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://s4shared.sap-cc.com:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZPLAPRJBER_CDS_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZPLAPRJBER_CDSType" sap:label="cds view für zplaprjber" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pernr"/>
+                    <PropertyRef Name="Prjid"/>
+                    <PropertyRef Name="Kalwoche"/>
+                </Key>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="NonNegative" sap:label="Personnel number"/>
+                <Property Name="Prjid" Type="Edm.String" Nullable="false" MaxLength="24" sap:display-format="UpperCase" sap:label="Project definition"/>
+                <Property Name="Kalwoche" Type="Edm.String" Nullable="false" MaxLength="6" sap:label="Week" sap:quickinfo="Factory calendar: Week"/>
+                <Property Name="Chargeable" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:label="Hours" sap:heading=""/>
+                <Property Name="Nochargeable" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:label="Hours" sap:heading=""/>
+                <Property Name="EmployeeId" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:label="Personnel Number"/>
+                <Property Name="Personalnr" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:label="Personnel Number"/>
+                <Property Name="Vornmame" Type="Edm.String" MaxLength="15" sap:display-format="UpperCase" sap:label="Employee's First Name" sap:heading=""/>
+                <Property Name="Nachname" Type="Edm.String" MaxLength="25" sap:display-format="UpperCase" sap:label="Employee's last name" sap:heading=""/>
+                <Property Name="Mitarbgruppe" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Employee group" sap:quickinfo="Employee Group"/>
+                <Property Name="Arbeitort" Type="Edm.String" MaxLength="35" sap:label="City"/>
+                <Property Name="Fachbereich" Type="Edm.String" MaxLength="40" sap:label="Department"/>
+                <Property Name="PensumWoche" Type="Edm.Decimal" Precision="5" Scale="2" sap:label="Weekly working hours" sap:quickinfo="Hours per week"/>
+                <Property Name="Eintrittsdatum" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Start Date"/>
+                <Property Name="Austrittsdatum" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="End Date"/>
+                <Property Name="Prjna" Type="Edm.String" MaxLength="40" sap:label="Description" sap:quickinfo="PS: Short description (1st text line)"/>
+                <Property Name="Kunnr" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Customer" sap:quickinfo="Customer Number"/>
+                <Property Name="Kunpl" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:label="No. of Person Resp." sap:quickinfo="Number of the Responsible Person (Project Manager)"/>
+                <Property Name="Kunplna" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Person Responsible"/>
+                <Property Name="Pernr_resp_proj" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:label="No. of Person Resp." sap:quickinfo="Number of the Responsible Person (Project Manager)"/>
+                <Property Name="Perna" Type="Edm.String" MaxLength="25" sap:label="Name of Person Resp." sap:quickinfo="Name of responsible person (Project manager)"/>
+                <Property Name="Opty" Type="Edm.String" MaxLength="30" sap:label="Description" sap:quickinfo="Opportunity: Text"/>
+                <Property Name="Stapro" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Sales document" sap:quickinfo="Sales and Distribution Document Number"/>
+                <Property Name="Charg" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Indicator" sap:quickinfo="General Flag"/>
+                <Property Name="Aufst" Type="Edm.String" MaxLength="30" sap:label="Release Status"/>
+                <Property Name="Stada" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Start Date"/>
+                <Property Name="Endda" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="End Date"/>
+                <Property Name="Fachber" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="IBU Identifier" sap:quickinfo="IBU (Industry Business Unit) Identifier"/>
+                <Property Name="Stund" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:label="Hours" sap:heading=""/>
+                <Property Name="Bedwo" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="BedarfWoch" sap:quickinfo="Bedarf pro Woche"/>
+                <Property Name="Name1Gp" Type="Edm.String" MaxLength="35" sap:label="Name" sap:quickinfo="Name 1"/>
+                <Property Name="Name2Gp" Type="Edm.String" MaxLength="35" sap:label="Name 2"/>
+                <Property Name="BusinessUnit" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="IBU Identifier" sap:quickinfo="IBU (Industry Business Unit) Identifier"/>
+                <Property Name="Sales" Type="Edm.String" MaxLength="80" sap:label="Sales Empl. Name" sap:quickinfo="Name of Sales Employee"/>
+                <Property Name="StrasGp" Type="Edm.String" MaxLength="35" sap:label="Street" sap:quickinfo="Street and House Number"/>
+                <Property Name="Land" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Country" sap:quickinfo="Country Key"/>
+                <Property Name="City" Type="Edm.String" MaxLength="25" sap:label="City"/>
+                <Property Name="Pstlz" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code"/>
+                <Property Name="Telf1" Type="Edm.String" MaxLength="16" sap:label="Telephone 1" sap:quickinfo="First telephone number"/>
+                <Property Name="Email" Type="Edm.String" MaxLength="241" sap:label="E-Mail Address"/>
+            </EntityType>
+            <EntityContainer Name="ZPLAPRJBER_CDS_CDS_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZPLAPRJBER_CDS" EntityType="ZPLAPRJBER_CDS_CDS.ZPLAPRJBER_CDSType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <Annotations Target="ZPLAPRJBER_CDS_CDS.ZPLAPRJBER_CDS_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://s4shared.sap-cc.com:443/sap/opu/odata/sap/ZPLAPRJBER_CDS_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://s4shared.sap-cc.com:443/sap/opu/odata/sap/ZPLAPRJBER_CDS_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
