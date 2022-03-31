@@ -24,8 +24,9 @@ sap.ui.define([
         onInit : function () {
             var oViewModel;
 
-            this.oSelectEmployee = this.getView().byId("selectOfWorker");
-            this.oSelectProject = this.getView().byId("selectOfProject");
+            this.oListProject = this.getView().byId("projectList");
+            this.oListEmployee = this.getView().byId("employeeList");
+            this.oListKunde = this.getView().byId("kundeList");
             //this.oTable = this.getView().byId("table");
 
             /*oTable.attachUpdateFinished(function() {
@@ -45,23 +46,23 @@ sap.ui.define([
             this.setModel(oViewModel, "worklistView");
    
            var oModelEmployee = this.getOwnerComponent().getModel("EmployeeJsonModel");
-           this.oSelectEmployee.setModel(oModelEmployee, "oEmployeeModel");
+           this.oListProject.setModel(oModelEmployee, "oEmployeeModel");
 			var oSelectTemplate = new sap.ui.core.ListItem({
                 key: "{EmployeeJsonModel>EMPLOYEE_ID}",
 				text: "{EmployeeJsonModel>VORNMAME}"
 			});
-			this.oSelectEmployee.bindItems({
+			this.oListProject.bindItems({
 				path: "EmployeeJsonModel>/results",
 				template: oSelectTemplate
 			});
 
-           var oModelProject = this.getOwnerComponent().getModel("ProjectJsonModel");
+           /*var oModelProject = this.getOwnerComponent().getModel("ProjectJsonModel");
            //this.oSelectProject.setModel(oModelProject, "oProjectModel");
 			var oSelectProjectTemplate = new sap.ui.core.ListItem({
                 key: "{ProjectJsonModel>PRJID}",
 				text: "{ProjectJsonModel>PRJNA}"
 			});
-			/*this.oSelectProject.bindItems({
+			this.oSelectProject.bindItems({
 				path: "ProjectJsonModel>/results",
 				template: oSelectProjectTemplate
 			});*/

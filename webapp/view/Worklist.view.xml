@@ -71,9 +71,9 @@
                         type="Navigation"
                         press=".onPress">
                         <cells>
-                        <Select  id="selectofProject" />                            
-                            <Select  id="selectOfWorker" />
-                            <Select  id="selectOfKunde" />
+                        <ActionListItem id="projectList" />
+		                <ActionListItem id="employeeList" />
+		                <ActionListItem id="kundeList" />
                         </cells>
                     </ColumnListItem>
                 </items>
