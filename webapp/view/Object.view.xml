@@ -14,6 +14,12 @@
         busy="{objectView>/busy}"
         busyIndicatorDelay="{objectView>/delay}">
 
+
+<semantic:titleHeading>
+            <Title
+                text="{EmployeeJsonModel>VORNMAME} {EmployeeJsonModel>NACHNAME} "
+                level="H2"/>
+        </semantic:titleHeading>
         <semantic:headerContent>
 		
         </semantic:headerContent>
