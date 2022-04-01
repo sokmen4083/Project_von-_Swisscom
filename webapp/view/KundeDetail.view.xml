@@ -1,0 +1,49 @@
+<mvc:View
+    controllerName="com.swisscom.socialbee.plan.resourceplan.controller.KundeDetail"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.f.semantic"
+    xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+     
+   <Page id="page" headerPinnable="false" toggleHeaderOnTitleClick="false" busy="{objectView>/busy}" busyIndicatorDelay="{objectView>/delay}">
+		<VBox class="sapUiSmallMargin">
+			<f:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+				<f:content>
+					<Avatar displaySize="XL" />
+					<Label text="Kunde_Name" />
+					<Input id="name" value="{KundeJsonModel>NAME1_GP}" />
+					<Label text="Kunde ID" />
+					<Input value="{KundeJsonModel>KUNDE_ID}" />
+					<Label text="Business Unit" />
+					<Input value="{KundeJsonModel>BUSINESS_UNIT}" />
+					<Label text="Sales" />
+					<Input value="{KundeJsonModel>SALES}">
+					</Input>
+					<Label text="Strasse" />
+					<Input value="{KundeJsonModel>STRAS_GP}">
+					</Input>
+					<Label text="Land" />
+					<Input value="{KundeJsonModel>LAND}">
+					</Input>
+					<Label text="City" />
+					<Input value="{KundeJsonModel>CITY}" />
+					<Label text="PSTLZ" />
+					<Input value="{KundeJsonModel>PSLTZ}" />
+					<Label text="TEL" />
+					<Input value="{KundeJsonModel>TELF1}" />
+					<Label text="EMAIL" />
+					<Input value="{KundeJsonModel>EMAIL}" />
+					<!--
+					</Input>
+					<Label type="number" text="TEL" />
+					<DatePicker displayFormat="short" dateValue="{KundeJsonModel>TELF1}" />
+					<Label text="EMAIL" />
+					<DatePicker displayFormat="short" dateValue="{KundeJsonModel>EMAIL}" />
+					-->
+				</f:content>
+			</f:SimpleForm>
+		</VBox>
+	</Page>
+</mvc:View>

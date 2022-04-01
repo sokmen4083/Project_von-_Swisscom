@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="com.swisscom.socialbee.plan.resourceplan.controller.Object"
+    controllerName="com.swisscom.socialbee.plan.resourceplan.controller.ProjectDetail"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:semantic="sap.f.semantic"
@@ -12,7 +12,6 @@
         toggleHeaderOnTitleClick="false"
         busy="{objectView>/busy}"
         busyIndicatorDelay="{objectView>/delay}">
-
         <semantic:titleHeading>
             <Title
                 text="{ProjectJsonModel>PRJNA}"

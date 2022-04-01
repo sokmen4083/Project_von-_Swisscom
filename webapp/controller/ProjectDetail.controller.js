@@ -6,7 +6,7 @@ sap.ui.define([
 ], function (BaseController, JSONModel, History, formatter) {
     "use strict";
 
-    return BaseController.extend("com.swisscom.socialbee.plan.resourceplan.controller.Object", {
+    return BaseController.extend("com.swisscom.socialbee.plan.resourceplan.controller.ProjectDetail", {
 
         formatter: formatter,
 
@@ -26,7 +26,7 @@ sap.ui.define([
                     busy : false,
                     delay : 0
                 });
-            this.getRouter().getRoute("object").attachPatternMatched(this._onObjectMatched, this);
+            this.getRouter().getRoute("projectDetail").attachPatternMatched(this._onObjectMatched, this);
             this.setModel(oViewModel, "objectView");
         },
         /* =========================================================== */
@@ -46,7 +46,7 @@ sap.ui.define([
                 // eslint-disable-next-line sap-no-history-manipulation
                 history.go(-1);
             } else {
-                this.getRouter().navTo("worklist", {}, true);
+                this.getRouter().navTo("app", {}, true);
             }
         },
 
