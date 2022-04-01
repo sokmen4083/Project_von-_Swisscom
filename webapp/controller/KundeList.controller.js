@@ -9,7 +9,8 @@ sap.ui.define([
 ], function (BaseController, JSONModel, formatter, Filter, FilterOperator, Merge, Each) {
     "use strict";
 
-    return BaseController.extend("com.swisscom.socialbee.plan.resourceplan.controller.Worklist", {
+    return BaseController.extend("com.swisscom.socialbee.plan.resourceplan.controller.KundeList", 
+    {
 
         formatter: formatter,
 
@@ -23,14 +24,7 @@ sap.ui.define([
          */
         onInit : function () {
             var oViewModel;
-
-            this.oListProject = this.getView().byId("projectList");
-            this.oListKunde = this.getView().byId("kundeList");
-            //this.oTable = this.getView().byId("table");
-
-            /*oTable.attachUpdateFinished(function() {
-                console.log("attachUpdateFinished");
-            });*/   
+        
 
             // keeps the search state
             this._aTableSearchState = [];
@@ -42,21 +36,7 @@ sap.ui.define([
                 shareSendEmailMessage: this.getResourceBundle().getText("shareSendEmailWorklistMessage", [location.href]),
                 tableNoDataText : this.getResourceBundle().getText("tableNoDataText")
             });
-            this.setModel(oViewModel, "worklistView");
-   
-           
-
-           /*var oModelProject = this.getOwnerComponent().getModel("ProjectJsonModel");
-           //this.oSelectProject.setModel(oModelProject, "oProjectModel");
-			var oSelectProjectTemplate = new sap.ui.core.ListItem({
-                key: "{ProjectJsonModel>PRJID}",
-				text: "{ProjectJsonModel>PRJNA}"
-			});
-			this.oSelectProject.bindItems({
-				path: "ProjectJsonModel>/results",
-				template: oSelectProjectTemplate
-			});*/
-
+            this.setModel(oViewModel, "kundeList");
         },
 
         /* =========================================================== */
@@ -84,15 +64,8 @@ sap.ui.define([
             } else {
                 sTitle = this.getResourceBundle().getText("worklistTableTitle");
             }
-            this.getModel("worklistView").setProperty("/worklistTableTitle", sTitle);
+            this.getModel("kundeList").setProperty("/worklistTableTitle", sTitle);
 
-            /*this.getOwnerComponent().getModel("PlanningJsonModel").setData(this.getOwnerComponent().getModel());
-            console.log(this.getOwnerComponent().getModel("PlanningJsonModel").getData().oData);
-            //var oTempPlanning = Merge({}, this.getOwnerComponent().getModel("PlanningJsonModel").getData().oData);
-            
-            var oTabel = sap.ui.getCore().byId("table");
-            oTabel.setModel(this.getOwnerComponent().getModel("PlanningJsonModel"));
-            */
         },
 
         /**
@@ -155,9 +128,8 @@ sap.ui.define([
          * @private
          */
         _showObject : function (oItem) {
-            var sPath = oItem.getBindingContext("EmployeeJsonModel").getPath().split("/")[2];
-            this.getRouter().navTo("object", {
-                //objectId: oItem.getBindingContext().getPath().substring("/ZPLAPRJBER_CDS".length)
+            var sPath = oItem.getBindingContext("KundeJsonModel").getPath().split("/")[2];
+            this.getRouter().navTo("kundeDetail", {
                 objectId: sPath
             });
         },

@@ -1,12 +1,12 @@
 <mvc:View
-    controllerName="com.swisscom.socialbee.plan.resourceplan.controller.Object"
+    controllerName="com.swisscom.socialbee.plan.resourceplan.controller.MitarbeiterDetail"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:semantic="sap.f.semantic"
-	xmlns:l="sap.ui.layout"
+    xmlns:l="sap.ui.layout"
 	xmlns:f="sap.ui.layout.form"
 	xmlns:core="sap.ui.core">
-
+     
     <semantic:SemanticPage
         id="page"
         headerPinnable="false"

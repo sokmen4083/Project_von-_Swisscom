@@ -1,0 +1,161 @@
+<mvc:View
+    controllerName="com.swisscom.socialbee.plan.resourceplan.controller.ProjectList"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.f.semantic">
+
+    <!--<IconTabBar select=".onFilterSelect">
+    <items>
+        <IconTabFilter
+				icon="sap-icon://begin"
+				iconColor="Positive"
+				text="Projects"
+				key="Projects" />
+			<IconTabFilter
+				icon="sap-icon://compare"
+				iconColor="Critical"
+				text="Mitarbeiter"
+				key="Mitarbeiter" />
+			<IconTabFilter
+				icon="sap-icon://inventory"
+				iconColor="Negative"
+				text="Kunde"
+				key="Kunde" />
+    </items>
+    <content>
+			<Table
+				id="table"
+                width="auto"
+                items="{
+                    path: 'ProjectJsonModel>/results',
+                    sorter: {
+                        path: 'ProjectJsonModel>PRJNA',
+                        desending: false
+                    }
+                    
+                }"
+                noDataText="{worklistView>/tableNoDataText}"
+                busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+                growing="true"
+                growingScrollToLoad="true"
+                updateFinished=".onUpdateFinished">
+					 <headerToolbar>
+                    <OverflowToolbar>
+                        <Title
+                            id="tableHeader"
+                            text="{worklistView>/worklistTableTitle}"
+                            level="H3"/>
+                        <ToolbarSpacer />
+                        <SearchField
+                            id="searchField"
+                            tooltip="{i18n>worklistSearchTooltip}"
+                            search=".onSearch">
+                            <layoutData>
+                                <OverflowToolbarLayoutData
+                                    maxWidth="200px"
+                                    priority="NeverOverflow"/>
+                            </layoutData>
+                        </SearchField>
+                    </OverflowToolbar>
+                </headerToolbar>
+				<columns>
+                    
+                    <Column id="projectColumn" hAlign="Middle">
+                        <Text text="Project" id="unitNumberColumnTitle2"/>
+                    </Column>
+                    <Column id="employeeColumn" hAlign="Middle">
+                        <Text text="Mitarbeiter" id="unitNumberColumnTitle1"/>
+                    </Column>
+                    <Column id="kundeColumn" hAlign="Middle">
+                        <Text text="Kunde" id="unitNumberColumnTitle"/>
+                    </Column>
+                </columns>
+				<items>
+                    <ColumnListItem
+                        type="Navigation"
+                        press=".onPress"
+                        >
+                        <cells>
+                        <ActionListItem text="{ProjectJsonModel>PRJNA}"/>
+		                <ActionListItem  />
+		                <ActionListItem  />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+			</Table>
+		</content>
+    </IconTabBar>
+</mvc:View>-->
+    <semantic:SemanticPage
+        id="page"
+        headerPinnable="false"
+        toggleHeaderOnTitleClick="false">
+
+        <semantic:titleHeading>
+            <Title
+                text="{i18n>worklistTitle}"
+                level="H2"/>
+        </semantic:titleHeading>
+
+        <semantic:content>
+            <Table
+				id="table"
+                width="auto"
+                items="{
+                    path: 'ProjectJsonModel>/results',
+                    sorter: {
+                        path: 'ProjectJsonModel>PRJNA',
+                        desending: false
+                    }
+                    
+                }"
+                noDataText="{worklistView>/tableNoDataText}"
+                busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+                growing="true"
+                growingScrollToLoad="true"
+                updateFinished=".onUpdateFinished">
+					 <headerToolbar>
+                    <OverflowToolbar>
+                        <Title
+                            id="tableHeader"
+                            text="{worklistView>/worklistTableTitle}"
+                            level="H3"/>
+                        <ToolbarSpacer />
+                        <SearchField
+                            id="searchField"
+                            tooltip="{i18n>worklistSearchTooltip}"
+                            search=".onSearch">
+                            <layoutData>
+                                <OverflowToolbarLayoutData
+                                    maxWidth="200px"
+                                    priority="NeverOverflow"/>
+                            </layoutData>
+                        </SearchField>
+                    </OverflowToolbar>
+                </headerToolbar>
+				<columns>
+                    
+                    <Column id="projectColumn" hAlign="Middle">
+                        <Text text="Project" id="unitNumberColumnTitle2"/>
+                    </Column>
+                </columns>
+				<items>
+                    <ColumnListItem
+                        type="Navigation"
+                        press=".onPress"
+                        >
+                        <cells>
+                        <ActionListItem text="{ProjectJsonModel>PRJNA}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+			</Table>
+        </semantic:content>
+
+        <semantic:sendEmailAction>
+            <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
+        </semantic:sendEmailAction>
+
+    </semantic:SemanticPage>
+</mvc:View>

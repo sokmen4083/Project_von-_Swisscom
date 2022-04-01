@@ -75,6 +75,9 @@
       },
       "ProjectJsonModel": {
         "type": "sap.ui.model.json.JSONModel"
+      },
+      "KundeJsonModel": {
+        "type": "sap.ui.model.json.JSONModel"
       }
     },
     "resources": {
@@ -97,29 +100,94 @@
       "routes": [
         {
           "pattern": "",
-          "name": "worklist",
+          "name": "home",
           "target": [
-            "worklist"
+            "home"
+          ]
+        },
+        {
+          "pattern": "ma",
+          "name": "mitarbeiterList",
+          "target": [
+            "mitarbeiterList"
+          ]
+        },
+        {
+          "pattern": "kunde",
+          "name": "kundeList",
+          "target": [
+            "kundeList"
+          ]
+        },
+        {
+          "pattern": "wl",
+          "name": "projectList",
+          "target": [
+            "projectList"
           ]
         },
         {
           "pattern": "ZPLAPRJBER_CDS/{objectId}",
-          "name": "object",
+          "name": "projectDetail",
           "target": [
-            "object"
+            "projectDetail"
+          ]
+        },
+        {
+          "pattern": "ZPLANMITARBEITER_CDS/{objectId}",
+          "name": "mitarbeiterDetail",
+          "target": [
+            "mitarbeiterDetail"
+          ]
+        },
+        {
+          "pattern": "ZPLAKUNDE_CDS/{objectId}",
+          "name": "kundeDetail",
+          "target": [
+            "kundeDetail"
           ]
         }
       ],
       "targets": {
-        "worklist": {
-          "viewName": "Worklist",
-          "viewId": "worklist",
+        "home": {
+          "viewName": "Home",
+          "viewId": "home",
           "viewLevel": 1,
-          "title": "{i18n>worklistViewTitle}"
+          "title": "Home"
         },
-        "object": {
-          "viewName": "Object",
-          "viewId": "object",
+        "mitarbeiterList": {
+          "viewName": "MitarbeiterList",
+          "viewId": "mitarbeiterList",
+          "viewLevel": 1,
+          "title": "MitarbeiterList"
+        },
+        "kundeList": {
+          "viewName": "KundeList",
+          "viewId": "kundeList",
+          "viewLevel": 1,
+          "title": "KundeList"
+        },
+        "projectList": {
+          "viewName": "ProjectList",
+          "viewId": "projectList",
+          "viewLevel": 1,
+          "title": "ProjectList"
+        },
+        "projectDetail": {
+          "viewName": "ProjectDetail",
+          "viewId": "projectDetail",
+          "viewLevel": 2,
+          "title": "{i18n>objectViewTitle}"
+        },
+        "mitarbeiterDetail": {
+          "viewName": "MitarbeiterDetail",
+          "viewId": "mitarbeiterDetail",
+          "viewLevel": 2,
+          "title": "{i18n>objectViewTitle}"
+        },
+        "kundeDetail": {
+          "viewName": "KundeDetail",
+          "viewId": "kundeDetail",
           "viewLevel": 2,
           "title": "{i18n>objectViewTitle}"
         },

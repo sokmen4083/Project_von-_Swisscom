@@ -40,6 +40,7 @@ sap.ui.define([
             this._readEmployee();
 			this._readProject();
             this._readProjectData();
+			this._readKunde();
         },
 
         /**
@@ -58,6 +59,7 @@ sap.ui.define([
 			var that = this;
             this.oProjectDeferred = jQuery.Deferred();
             this.oEmployeeDeferred = jQuery.Deferred();
+			this.oKundeDeferred = jQuery.Deferred();
 			/*this.oComp.oReadQuotaDeferred = jQuery.Deferred();
 			this.oComp.oReadFavoriteDeferred = jQuery.Deferred();
 			this.oComp.oGetUserPropertiesDeferred = jQuery.Deferred();
@@ -69,7 +71,8 @@ sap.ui.define([
 	
 			jQuery.when(
                 this.oProjectDeferred,
-                this.oEmployeeDeferred
+                this.oEmployeeDeferred,
+				this.oKundeDeferred
 				/*this.oComp.oReadQuotaDeferred,
 				this.oComp.oReadFavoriteDeferred,
 				this.oComp.oGetUserPropertiesDeferred,
@@ -195,6 +198,57 @@ sap.ui.define([
 
         },
 
+		_readKunde: function() {
+
+
+            var that = this;
+			//this.oComp.oHelper.showBusyIndicator(null, 1);
+			var ProjPlanODataModel = this.getModel("ProjPlanODataModel");
+			/*var oParameter = {
+				$filter: "Profile eq \'" + sProfile + "\' and UName  eq \'" + sUname + "\' and EmployeeNumber  eq \'" + sEmplNr + "\'"
+			};*/
+			var oParameters = {
+				//urlParameters: oParameter,
+				success: function(oData, response) {
+					var KundeJsonModel = that.getModel("KundeJsonModel");
+		    		//oLocalFavoriteModel.setData([]);
+					//var aDataCopy = JSON.parse(JSON.stringify(oData));
+                    KundeJsonModel.setData(oData, false);
+                    console.log(KundeJsonModel.getData());
+                    that.oKundeDeferred.resolve();
+					/*if(oFavoriteList !== null) {
+						that._bindFavoriteList(oLocalFavoriteModel, oFavoriteList, sProfile, sUname);
+					}
+					
+					if(bIsCallerCalendar) {
+						that.oComp.oEventBus.publish("favoriteLoad", "loaded");
+						if(!bIsInitialCall) {
+							that.oComp.oHelper.handleGLAZPopover(false);
+						}
+					}
+					
+					if(!bIsInitialCall) {
+						that.oComp.oHelper.hideBusyIndicator(null);
+					}
+					else {
+						that.oComp.oReadFavoriteDeferred.resolve();
+                    }
+                    */
+				},
+				error: function(oError) {
+					/*that.oComp.oHelper.hideBusyIndicator(null);
+					var oErrorResponse = JSON.parse(oError.responseText);
+                    that.oComp.oNotification.error(oErrorResponse.error.message.value + that.oComp.oNotification.getHtmlFormatedServicId("FavoriteService.0001"));
+                    */
+				}
+			};
+			ProjPlanODataModel.read(
+					"/ZPLAKUNDE",
+	                oParameters
+                    );
+
+
+        },
 
 		_readProject: function() {
             

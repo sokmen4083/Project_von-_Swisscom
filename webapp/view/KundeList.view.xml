@@ -1,11 +1,11 @@
 <mvc:View
-    controllerName="com.swisscom.socialbee.plan.resourceplan.controller.Worklist"
+    controllerName="com.swisscom.socialbee.plan.resourceplan.controller.KundeList"
     xmlns="sap.m"
     xmlns:core="sap.ui.core"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:semantic="sap.f.semantic">
 
-    <semantic:SemanticPage
+   <semantic:SemanticPage
         id="page"
         headerPinnable="false"
         toggleHeaderOnTitleClick="false">
@@ -21,9 +21,9 @@
                 id="table"
                 width="auto"
                 items="{
-                    path: 'EmployeeJsonModel>/results',
+                    path: 'KundeJsonModel>/results',
                     sorter: {
-                        path: 'EmployeeJsonModel>VORNMAME',
+                        path: 'KundeJsonModel>NAME1_GP',
                         desending: false
                     }
                     
@@ -55,16 +55,10 @@
                 </headerToolbar>
 
                 <columns>
-                    
-                    <Column id="projectColumn" hAlign="Middle">
-                        <Text text="Project" id="unitNumberColumnTitle2"/>
-                    </Column>
-                    <Column id="employeeColumn" hAlign="Middle">
-                        <Text text="Mitarbeiter" id="unitNumberColumnTitle1"/>
-                    </Column>
                     <Column id="kundeColumn" hAlign="Middle">
-                        <Text text="Kunde" id="unitNumberColumnTitle"/>
+                        <Text text="Kunde Name" id="unitNumberColumnTitle1"/>
                     </Column>
+                    
                 </columns>
 
                 <items>
@@ -73,9 +67,7 @@
                         press=".onPress"
                         >
                         <cells>
-                        <ActionListItem />
-		                <ActionListItem  text="{EmployeeJsonModel>VORNMAME} {EmployeeJsonModel>NACHNAME}"/>
-		                <ActionListItem  />
+		                <ActionListItem  text="{KundeJsonModel>NAME1_GP}"/>  
                         </cells>
                     </ColumnListItem>
                 </items>
