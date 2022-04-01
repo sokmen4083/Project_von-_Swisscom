@@ -38,6 +38,8 @@
 			columnsM="1"
 			singleContainerFullSize="false" >
 			<f:content>
+                <Label text="Project ID" />
+				<Input  value="{ProjectJsonModel>PRJID}" />
 				<Label text="Project Name" />
 				<Input  value="{ProjectJsonModel>PRJNA}" />
                 <Label text="Kunde Number" />

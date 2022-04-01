@@ -58,7 +58,9 @@
                     <Column id="kundeColumn" hAlign="Middle">
                         <Text text="Kunde Name" id="unitNumberColumnTitle1"/>
                     </Column>
-                    
+                    <Column>
+                        <Text text="Star"/>
+                    </Column>
                 </columns>
 
                 <items>
@@ -68,6 +70,12 @@
                         >
                         <cells>
 		                <ActionListItem  text="{KundeJsonModel>NAME1_GP}"/>  
+                        <RatingIndicator
+                                tittle="Star"
+                                id="RI_default"
+                                maxValue="5"
+                                class="sapUiSmallMarginBottom"
+                          />  
                         </cells>
                     </ColumnListItem>
                 </items>

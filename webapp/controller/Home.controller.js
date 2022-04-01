@@ -68,6 +68,9 @@ sap.ui.define([
         onKundePress: function(){
             this.getRouter().navTo("kundeList", {});
         },
+        onCalendarPress: function(){
+            this.getRouter().navTo("calendar", {});
+        }
 
     });
 });

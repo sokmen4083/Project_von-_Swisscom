@@ -12,7 +12,7 @@
         <content >
             <GenericTile id="proj" press=".onProjPress" header="Project" >
                 <TileContent>	
-                    <ImageContent src="sap-icon://project-definition-triangle" />
+                    <ImageContent src="sap-icon://capital-projects" />
                 </TileContent>
 
             </GenericTile>
@@ -25,6 +25,12 @@
             <GenericTile id="kunde" press=".onKundePress" header="Kunde">
                 <TileContent>
                     <ImageContent src="sap-icon://customer" />    
+                </TileContent>
+            </GenericTile>
+
+            <GenericTile  press=".onCalendarPress" header="Planung">
+                <TileContent>
+                    <ImageContent src="sap-icon://appointment" />    
                 </TileContent>
             </GenericTile>
             

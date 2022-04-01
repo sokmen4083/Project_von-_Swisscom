@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="com.swisscom.socialbee.plan.resourceplan.controller.MitarbeiterList"
+    controllerName="com.swisscom.socialbee.plan.resourceplan.controller.Calendar"
     xmlns="sap.m"
     xmlns:core="sap.ui.core"
     xmlns:mvc="sap.ui.core.mvc"
