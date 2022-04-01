@@ -12,10 +12,10 @@
 			<f:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
 				<f:content>
 					<Avatar displaySize="XL" />
-					<Label text="Kunde_Name" />
-					<Input id="name" value="{KundeJsonModel>NAME1_GP}" />
 					<Label text="Kunde ID" />
 					<Input value="{KundeJsonModel>KUNDE_ID}" />
+					<Label text="Kunde_Name" />
+					<Input id="name" value="{KundeJsonModel>NAME1_GP}" />
 					<Label text="Business Unit" />
 					<Input value="{KundeJsonModel>BUSINESS_UNIT}" />
 					<Label text="Sales" />

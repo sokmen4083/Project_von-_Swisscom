@@ -60,7 +60,8 @@
                 <Input type="number" value="{EmployeeJsonModel>MITARBGRUPPE}">
 				</Input>
                 <Label text="Pensum Pro Woche" />
-                <Input value="{EmployeeJsonModel>PENSUM_WOCHE}">
+                <Input value="{EmployeeJsonModel>PENSUM_WOCHE}"
+							>
 				</Input>
                 <Label text="EINTRITTSDATUM" />
                 <DatePicker displayFormat="short" dateValue="{EmployeeJsonModel>EINTRITTSDATUM}" />

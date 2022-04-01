@@ -43,6 +43,8 @@
       "minUI5Version": "1.99.0",
       "libs": {
         "sap.ui.core": {},
+        "sap.ui.unified": {},
+        "sap.ui.layout": {},
         "sap.m": {},
         "sap.f": {}
       }
@@ -120,6 +122,13 @@
           ]
         },
         {
+          "pattern": "calendar",
+          "name": "calendar",
+          "target": [
+            "calendar"
+          ]
+        },
+        {
           "pattern": "wl",
           "name": "projectList",
           "target": [
@@ -172,6 +181,12 @@
           "viewId": "projectList",
           "viewLevel": 1,
           "title": "ProjectList"
+        },
+        "calendar": {
+          "viewName": "Calendar",
+          "viewId": "calendar",
+          "viewLevel": 1,
+          "title": "Calendar"
         },
         "projectDetail": {
           "viewName": "ProjectDetail",
