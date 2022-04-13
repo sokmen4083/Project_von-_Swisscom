@@ -10,7 +10,7 @@
         id="page">
             
         <content >
-            <GenericTile id="proj" press=".onProjPress" header="Project" >
+            <GenericTile id="proj" press=".onProjPress" header="Projekt" >
                 <TileContent>	
                     <ImageContent src="sap-icon://capital-projects" />
                 </TileContent>

@@ -1,93 +1,66 @@
 <mvc:View
     controllerName="com.swisscom.socialbee.plan.resourceplan.controller.Calendar"
-    xmlns="sap.m"
-    xmlns:core="sap.ui.core"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns:semantic="sap.f.semantic">
-
-   <semantic:SemanticPage
-        id="page"
-        headerPinnable="false"
-        toggleHeaderOnTitleClick="false">
-
-        <semantic:titleHeading>
-            <Title
-                text="{i18n>worklistTitle}"
-                level="H2"/>
-        </semantic:titleHeading>
-
-        <semantic:content>
-            <Table
-                id="table"
-                width="auto"
-                items="{
-                    path: 'EmployeeJsonModel>/results',
-                    sorter: {
-                        path: 'EmployeeJsonModel>VORNMAME',
-                        desending: false
-                    }
-                    
-                }"
-                noDataText="{worklistView>/tableNoDataText}"
-                busyIndicatorDelay="{worklistView>/tableBusyDelay}"
-                growing="true"
-                growingScrollToLoad="true"
-                updateFinished=".onUpdateFinished">
-
-                <headerToolbar>
-                    <OverflowToolbar>
-                        <Title
-                            id="tableHeader"
-                            text="{worklistView>/worklistTableTitle}"
-                            level="H3"/>
-                        <ToolbarSpacer />
-                        <SearchField
-                            id="searchField"
-                            tooltip="{i18n>worklistSearchTooltip}"
-                            search=".onSearch">
-                            <layoutData>
-                                <OverflowToolbarLayoutData
-                                    maxWidth="200px"
-                                    priority="NeverOverflow"/>
-                            </layoutData>
-                        </SearchField>
-                    </OverflowToolbar>
-                </headerToolbar>
-
-                <columns>
-                    <Column id="employeeColumn" hAlign="Middle">
-                        <Text text="Mitarbeiter" id="unitNumberColumnTitle1"/>
-                    </Column>
-                    <Column>
-                        <Text text="Pensum Woche"/>
-                    </Column>
-                    
-                </columns>
-
-                <items>
-                    <ColumnListItem
-                        type="Navigation"
-                        press=".onPress"
-                        >
-                        <cells>
-		                <ActionListItem  text="{EmployeeJsonModel>VORNMAME} {EmployeeJsonModel>NACHNAME}"/>  
-		                <RatingIndicator
-                                tittle="Star"
-                                id="RI_default"
-                                maxValue="5"
-                                class="sapUiSmallMarginBottom"
-                                value="{EmployeeJsonModel>PENSUM_WOCHE}"
-                          />  
-                        </cells>
-                    </ColumnListItem>
-                </items>
-            </Table>
-        </semantic:content>
-
-        <semantic:sendEmailAction>
-            <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
-        </semantic:sendEmailAction>
-
-    </semantic:SemanticPage>
-
+   xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:unified="sap.ui.unified"
+	xmlns="sap.m">
+	<VBox class="sapUiSmallMargin">
+		<PlanningCalendar
+			id="PC1"
+			startDate="{path: '/startDate'}"
+			rows="{path: '/people'}"
+			appointmentsVisualization="Filled"
+			appointmentSelect="handleAppointmentSelect"
+			showEmptyIntervalHeaders="false"
+			showWeekNumbers="true">
+			<toolbarContent>
+				<Title text="Planung" titleStyle="H4"/>
+			</toolbarContent>
+			<rows>
+				<PlanningCalendarRow
+					icon="{pic}"
+					title="{name}"
+					text="{role}"
+					appointments="{path : 'appointments', templateShareable: false}"
+					intervalHeaders="{path: 'headers', templateShareable: false}">
+					<customData>
+						<core:CustomData key="emp-name" value="{name}" writeToDom="true"/>
+					</customData>
+					<appointments>
+						<unified:CalendarAppointment
+							startDate="{start}"
+							endDate="{end}"
+							icon="{pic}"
+							title="{title}"
+							text="{info}"
+							type="{type}"
+							tentative="{tentative}">
+						</unified:CalendarAppointment>
+					</appointments>
+					<intervalHeaders>
+						<unified:CalendarAppointment
+							startDate="{start}"
+							endDate="{end}"
+							icon="{pic}"
+							title="{title}"
+							type="{type}">
+						</unified:CalendarAppointment>
+					</intervalHeaders>
+				</PlanningCalendarRow>
+			</rows>
+		</PlanningCalendar>
+		<Label text="Add available built-in views to the example:"/>
+		<MultiComboBox
+				selectionFinish="handleSelectionFinish"
+				width="230px"
+				placeholder="Choose built-in views">
+			<items>
+				<core:Item key="Hour" text="Hour" />
+				<core:Item key="Day" text="Day" />
+				<core:Item key="Month" text="Month" />
+				<core:Item key="Week" text="1 week" />
+				<core:Item key="One Month" text="1 month" />
+			</items>
+		</MultiComboBox>
+	</VBox>
 </mvc:View>
